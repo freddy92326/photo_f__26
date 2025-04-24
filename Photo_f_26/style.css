@@ -1,0 +1,72 @@
+/* 基本樣式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+/* 可橫向滑動的容器 */
+.scroll-container {
+    display: flex;
+    justify-content: center;           /* ✅ 讓整排圖片置中 */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    margin: 0 auto;                    /* ✅ 自己也置中 */
+    max-width: 100%; 
+}
+
+/* 每個圖片項目（控制間距） */
+.scroll-item {
+    flex: 0 0 auto;
+    margin-right: 16px;         /* ✅ 圖片間距 */
+    scroll-snap-align: start;
+}
+
+/* 最後一張不要多餘空隙 */
+.scroll-item:last-child {
+    margin-right: 0;
+}
+
+/* 圖片樣式 */
+.scroll-item img {
+    height: 400px;              /* ✅ 高度一致 */
+    object-fit: contain;        /* ✅ 完整顯示 */
+    display: block;
+    background-color: black;    /* ✅ 補滿空隙 */
+    border-radius: 10px;
+    margin: 0;
+    border: none;
+}
